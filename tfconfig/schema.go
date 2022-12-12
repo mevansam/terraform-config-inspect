@@ -47,6 +47,42 @@ var terraformBlockSchema = &hcl.BodySchema{
 		{
 			Type: "required_providers",
 		},
+		{
+			Type: "backend",
+			LabelNames: []string{"s3"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"azurerm"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"gcs"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"oss"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"cos"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"pg"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"consul"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"kubernetes"},
+		},
+		{
+			Type: "backend",
+			LabelNames: []string{"http"},
+		},
 	},
 }
 

@@ -100,6 +100,11 @@ func LoadModuleFromFile(file *hcl.File, mod *Module) hcl.Diagnostics {
 							mod.RequiredProviders[name].VersionConstraints = append(mod.RequiredProviders[name].VersionConstraints, req.VersionConstraints...)
 						}
 					}
+				case "backend": 
+					name := innerBlock.Labels[0]
+					mod.BackendConfig = &BackendConfig{
+						Name: name,
+					}
 				}
 			}
 

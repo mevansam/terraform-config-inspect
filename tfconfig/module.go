@@ -17,6 +17,8 @@ type Module struct {
 	DataResources    map[string]*Resource       `json:"data_resources"`
 	ModuleCalls      map[string]*ModuleCall     `json:"module_calls"`
 
+	BackendConfig *BackendConfig  `json:"beckend_config,omitempty"`
+
 	// Diagnostics records any errors and warnings that were detected during
 	// loading, primarily for inclusion in serialized forms of the module
 	// since this slice is also returned as a second argument from LoadModule.
@@ -27,6 +29,11 @@ type Module struct {
 type ProviderConfig struct {
 	Name  string `json:"name"`
 	Alias string `json:"alias,omitempty"`
+}
+
+// BackendConfig represents a backend block in the configuration
+type BackendConfig struct {
+	Name  string `json:"name"`
 }
 
 // NewModule creates new Module representing Terraform module at the given path
